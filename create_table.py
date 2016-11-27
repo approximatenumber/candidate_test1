@@ -48,17 +48,19 @@ for element in elements:
 
             if equal_count == 0:
                 worksheet.write(row, col, e_refdes)
-            elif equal_count > 0:
+            else:
                 worksheet.write(row, col, ".." + e_refdes)
 
         equal_count += 1
+
     else:
+
         if equal_count == 0:
             refdes_to_write += e_refdes
             worksheet.write(row, col, e_refdes)
             row += 1
 
-        elif equal_count > 0:
+        else:
             worksheet.write(row, col, ".."+prev_e)
             row += 1
             worksheet.write(row, col, e_refdes)

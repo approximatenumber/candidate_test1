@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import csv
-from collections import OrderedDict
 from natsort import natsorted
 
 
@@ -74,27 +73,7 @@ def sort_group_naturally(element_group):
 
 
 def create_table(element_group):
-    start_element = sort_group_naturally(element_group)[0]
-    print('start %s' % start_element)
-    same_count = 0
-    for element_name in sort_group_naturally(element_group):
-        if element_group[element_name] == element_group[start_element]:
-            if same_count > 0:
-                pass
-            else:
-                print('..')
-            same_count += 1
-        else:
-            if same_count == 0:
-                print('only one %s' % start_element)
-                print('\nstart %s' % element_name)
-            else:
-                print('end %s' % start_element)
-                print('\nstart %s' % element_name)
-                same_count = 0
-        start_element = element_name
-    print(start_element)
-#        print(element_name, element_group[element_name])
+    pass
 
 
 def main():
@@ -119,9 +98,6 @@ def main():
 #        elements_co = extract_group('CO')
 
        # create_table(elements_res)
-
-
-
 
     except ImportError:
         print("Something goes wrong with parsing %s" % CONFIG['csv_file']['filename'])
