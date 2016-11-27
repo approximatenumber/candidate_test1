@@ -43,9 +43,8 @@ for element in elements:
     refdes_to_write = ""
 
     if e_params == e_params_prev:
-
+        # is it last element in the list?
         if element == elements[-1]:
-
             if equal_count == 0:
                 worksheet.write(row, col, e_refdes)
             else:
@@ -54,10 +53,9 @@ for element in elements:
         equal_count += 1
 
     else:
-
         if equal_count == 0:
             refdes_to_write += e_refdes
-            worksheet.write(row, col, e_refdes)
+            worksheet.write(row, col, refdes_to_write)
             row += 1
 
         else:
